@@ -1,0 +1,630 @@
+{
+	"info": {
+		"_postman_id": "d885037f-ac56-4836-a796-4c241a07295c",
+		"name": "JD Power Waterfall",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_uid": "2887689-d885037f-ac56-4836-a796-4c241a07295c"
+	},
+	"item": [
+		{
+			"name": "GET Waterfall by Vin",
+			"item": [
+				{
+					"name": "isAuthorized Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "cb365103-6098-4ca9-931f-df73330efb72",
+								"exec": [
+									"pm.environment.set('XSRF-TOKEN', pm.cookies.get('XSRF-TOKEN'))"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "770f72ff-068d-4506-8e1f-4de69881d969",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "X-FORWARDED-FOR",
+								"value": "10.1.0.1"
+							}
+						],
+						"url": {
+							"raw": "https://devblu.fni-stl.com/fni-lenderportal-navigation/navigation/login/isAuthorized",
+							"protocol": "https",
+							"host": [
+								"devblu",
+								"fni-stl",
+								"com"
+							],
+							"path": [
+								"fni-lenderportal-navigation",
+								"navigation",
+								"login",
+								"isAuthorized"
+							]
+						}
+					},
+					"response": [
+						{
+							"id": "8336d777-aab2-4aae-945f-0785420e0ae8",
+							"name": "isAuthorized",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "X-FORWARDED-FOR",
+										"value": "10.1.0.1"
+									}
+								],
+								"url": {
+									"raw": "https://devblu.fni-stl.com/fni-lenderportal-navigation/navigation/login/isAuthorized",
+									"protocol": "https",
+									"host": [
+										"devblu",
+										"fni-stl",
+										"com"
+									],
+									"path": [
+										"fni-lenderportal-navigation",
+										"navigation",
+										"login",
+										"isAuthorized"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "plain",
+							"header": [
+								{
+									"key": "Date",
+									"value": "Wed, 12 Jan 2022 14:31:50 GMT"
+								},
+								{
+									"key": "Content-Length",
+									"value": "0"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "set-cookie",
+									"value": "JSESSIONID=F37B472E83EE16AD2CEDFDF64DDB51F4; Path=/; Secure; HttpOnly"
+								},
+								{
+									"key": "set-cookie",
+									"value": "XSRF-TOKEN=e3ece8d8-86fe-4ce0-8f39-9a030c3b7dca; Path=/fni-lenderportal-navigation; Secure"
+								},
+								{
+									"key": "x-content-type-options",
+									"value": "nosniff"
+								},
+								{
+									"key": "x-xss-protection",
+									"value": "1; mode=block"
+								},
+								{
+									"key": "cache-control",
+									"value": "no-cache, no-store, max-age=0, must-revalidate"
+								},
+								{
+									"key": "pragma",
+									"value": "no-cache"
+								},
+								{
+									"key": "expires",
+									"value": "0"
+								},
+								{
+									"key": "strict-transport-security",
+									"value": "max-age=15724800; includeSubDomains"
+								},
+								{
+									"key": "x-frame-options",
+									"value": "DENY"
+								},
+								{
+									"key": "via",
+									"value": "1.1 google"
+								},
+								{
+									"key": "Access-Control-Allow-Methods",
+									"value": "POST, GET, OPTIONS, PUT, PATCH, DELETE"
+								},
+								{
+									"key": "Access-Control-Allow-Credentials",
+									"value": "true"
+								}
+							],
+							"cookie": [],
+							"body": null
+						}
+					]
+				},
+				{
+					"name": "authenticate Copy",
+					"id": "ae5d4edd-a192-482b-97dc-b14d394aedc9",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "X-FORWARDED-FOR",
+								"value": "10.1.0.1"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36"
+							},
+							{
+								"key": "X-XSRF-TOKEN",
+								"value": "{{XSRF-TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n\t\"fieldId\": \"AUTHENTICATE\",\r\n\t\"fieldValues\": [\r\n\t\t[\r\n\t\t\t{\r\n\t\t\t\t\"fieldId\": \"USERNAME\",\r\n\t\t\t\t\"fieldValue\": \"bverdin\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"fieldId\": \"CAPTCHA_RESPONSE\",\r\n\t\t\t\t\"fieldValue\": \"03AMGVjXg2XJwKkDqyotYaX4TCkqUMX7CehJR90SVKnQ5SH40g9aZtfRZuAyycn_irLm9AtcBTIS0Vubx2JtGZd4IVKxWvGCUy1Qe198WdvAK36fpv1_f7AHQlvoqKdYrXQCG-r_ZXeqFSRLJVlF-wLnmp_cxSRY_g67Aazohv-E_i-Gn-Aqb_6q1aR0DdMJNmOzIfn_c8FOGQ44U4LGHqXEU2ByUWN-f27_ABB6ZiVDImUbnRq0oEF9GykrtmnFrjgsfkAXDFnzhCbernpjf2z50FJfosVOHbfg\"\r\n\t\t\t},\r\n\t\t\t{\r\n\t\t\t\t\"fieldId\": \"PASSWORD\",\r\n\t\t\t\t\"fieldValue\": \"pass1234\"\r\n\t\t\t}\r\n\t\t]\r\n\t]\r\n}"
+						},
+						"url": {
+							"raw": "https://devblu.fni-stl.com/fni-lenderportal-navigation/navigation/login/authenticate",
+							"protocol": "https",
+							"host": [
+								"devblu",
+								"fni-stl",
+								"com"
+							],
+							"path": [
+								"fni-lenderportal-navigation",
+								"navigation",
+								"login",
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Setup WB Session Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"id": "833875d1-415a-4e98-b032-d77f665d4a69",
+								"exec": [
+									"pm.environment.set('XSRF-TOKEN', pm.cookies.get('XSRF-TOKEN'))"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"id": "4220ec34-7780-401a-a54a-cfc27ceae355",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://devblu.fni-stl.com/fni-lenderportal-workbench/?REFNUM=10000000200102",
+							"protocol": "https",
+							"host": [
+								"devblu",
+								"fni-stl",
+								"com"
+							],
+							"path": [
+								"fni-lenderportal-workbench",
+								""
+							],
+							"query": [
+								{
+									"key": "REFNUM",
+									"value": "10000000200102"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Waterfall by VIN",
+					"id": "cedddd6e-880c-4e61-bd25-02dace7828d3",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "X-FORWARDED-FOR",
+								"value": "10.1.0.1"
+							},
+							{
+								"key": "XSRF-TOKEN",
+								"value": "{{XSRF-TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://devblu.fni-stl.com/fni-lenderportal-workbench/workbench/auto-collateral/vehicles/waterfall/jdpower/vin/1D7HA16D94J171206",
+							"protocol": "https",
+							"host": [
+								"devblu",
+								"fni-stl",
+								"com"
+							],
+							"path": [
+								"fni-lenderportal-workbench",
+								"workbench",
+								"auto-collateral",
+								"vehicles",
+								"waterfall",
+								"jdpower",
+								"vin",
+								"1D7HA16D94J171206"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Waterfall by Bad VIN",
+					"id": "751f8664-46d1-4c1d-9598-2e4d5b2f4bb6",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "X-FORWARDED-FOR",
+								"value": "10.1.0.1"
+							},
+							{
+								"key": "XSRF-TOKEN",
+								"value": "{{XSRF-TOKEN}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "https://devblu.fni-stl.com/fni-lenderportal-workbench/workbench/auto-collateral/vehicles/waterfall/jdpower/vin/ZZZHA16D94J171206",
+							"protocol": "https",
+							"host": [
+								"devblu",
+								"fni-stl",
+								"com"
+							],
+							"path": [
+								"fni-lenderportal-workbench",
+								"workbench",
+								"auto-collateral",
+								"vehicles",
+								"waterfall",
+								"jdpower",
+								"vin",
+								"ZZZHA16D94J171206"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"id": "8414821d-8659-437b-8f81-2d089b7dfec5"
+		},
+		{
+			"name": "GET Years",
+			"id": "9ab4dc5c-e137-4ff4-b623-2487b8fc1830",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-FORWARDED-FOR",
+						"value": "10.1.0.1"
+					}
+				],
+				"url": {
+					"raw": "https://devblu.fni-stl.com/fni-lenderportal-touchpoint/touchpoint/auto/jdpower/year",
+					"protocol": "https",
+					"host": [
+						"devblu",
+						"fni-stl",
+						"com"
+					],
+					"path": [
+						"fni-lenderportal-touchpoint",
+						"touchpoint",
+						"auto",
+						"jdpower",
+						"year"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Regions",
+			"id": "def4bae4-b874-4eb7-8623-08ec08d441d1",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-FORWARDED-FOR",
+						"value": "10.1.0.1"
+					}
+				],
+				"url": {
+					"raw": "https://devblu.fni-stl.com/fni-lenderportal-touchpoint/touchpoint/auto/jdpower/regions",
+					"protocol": "https",
+					"host": [
+						"devblu",
+						"fni-stl",
+						"com"
+					],
+					"path": [
+						"fni-lenderportal-touchpoint",
+						"touchpoint",
+						"auto",
+						"jdpower",
+						"regions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Year",
+			"id": "49ab80d2-af1f-41cc-9c62-0bf325784d07",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-FORWARDED-FOR",
+						"value": "10.1.0.1"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"year\": \"2012\",\r\n    \"make\": \"\",\r\n    \"model\": \"\",\r\n    \"serviceVehicleId\": \"\",\r\n    \"region\": \"\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://tstblu.fni-stl.com/fni-lenderportal-touchpoint/touchpoint/auto/jdpower/make",
+					"protocol": "https",
+					"host": [
+						"tstblu",
+						"fni-stl",
+						"com"
+					],
+					"path": [
+						"fni-lenderportal-touchpoint",
+						"touchpoint",
+						"auto",
+						"jdpower",
+						"make"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Make",
+			"id": "fbd0050f-2deb-473c-9487-a6f56507bbd6",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-FORWARDED-FOR",
+						"value": "10.1.0.1"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"year\": \"2012\",\r\n    \"make\": \"nissan\",\r\n    \"model\": \"\",\r\n    \"serviceVehicleId\": \"\",\r\n    \"region\": \"\"\r\n}"
+				},
+				"url": {
+					"raw": "https://devblu.fni-stl.com/fni-lenderportal-touchpoint/touchpoint/auto/jdpower/model",
+					"protocol": "https",
+					"host": [
+						"devblu",
+						"fni-stl",
+						"com"
+					],
+					"path": [
+						"fni-lenderportal-touchpoint",
+						"touchpoint",
+						"auto",
+						"jdpower",
+						"model"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Model",
+			"id": "3a41cf85-07fb-4d83-839d-c4c54733be6a",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-FORWARDED-FOR",
+						"value": "10.1.0.1"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"year\": \"2012\",\r\n    \"make\": \"nissan\",\r\n    \"model\": \"Murano\",\r\n    \"serviceVehicleId\": \"\",\r\n    \"region\": \"\"\r\n}"
+				},
+				"url": {
+					"raw": "https://devblu.fni-stl.com/fni-lenderportal-touchpoint/touchpoint/auto/jdpower/trim",
+					"protocol": "https",
+					"host": [
+						"devblu",
+						"fni-stl",
+						"com"
+					],
+					"path": [
+						"fni-lenderportal-touchpoint",
+						"touchpoint",
+						"auto",
+						"jdpower",
+						"trim"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "POST Trim",
+			"id": "bb656497-a23e-4a6d-acec-a4c1ab1e2fb4",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-FORWARDED-FOR",
+						"value": "10.1.0.1"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"year\": \"2012\",\r\n    \"make\": \"nissan\",\r\n    \"model\": \"Murano\",\r\n    \"serviceVehicleId\": \"201232747\",\r\n    \"region\": \"4\"\r\n}"
+				},
+				"url": {
+					"raw": "https://devblu.fni-stl.com/fni-lenderportal-touchpoint/touchpoint/auto/jdpower/equipment",
+					"protocol": "https",
+					"host": [
+						"devblu",
+						"fni-stl",
+						"com"
+					],
+					"path": [
+						"fni-lenderportal-touchpoint",
+						"touchpoint",
+						"auto",
+						"jdpower",
+						"equipment"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test 12222022_03",
+			"id": "4565671d-c09a-4fe3-9206-75575bd9cf99",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-FORWARDED-FOR",
+						"value": "10.1.0.1"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"year\": \"2012\",\r\n    \"make\": \"nissan\",\r\n    \"model\": \"Murano\",\r\n    \"serviceVehicleId\": \"201232747\",\r\n    \"region\": \"4\"\r\n}"
+				},
+				"url": {
+					"raw": "https://devblu.fni-stl.com/fni-lenderportal-touchpoint/touchpoint/auto/jdpower/equipment",
+					"protocol": "https",
+					"host": [
+						"devblu",
+						"fni-stl",
+						"com"
+					],
+					"path": [
+						"fni-lenderportal-touchpoint",
+						"touchpoint",
+						"auto",
+						"jdpower",
+						"equipment"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
